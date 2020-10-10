@@ -1,0 +1,41 @@
+.login,
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px; /* flex margin */
+  width: 99vw;
+  height: 99vh;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+
+@media (max-width: 1000px) {
+  .loginInput {
+    width: 80%;
+  }
+  .loginSubmit {
+    width: 80%;
+  }
+}
+
+@media (max-width: 1500px) {
+  .loginInput {
+    width: 50%;
+  }
+  .loginSubmit {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1501px) {
+  .loginInput {
+    width: 30%;
+  }
+  .loginSubmit {
+    width: 30%;
+  }
+}

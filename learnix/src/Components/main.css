@@ -1,0 +1,19 @@
+.container {
+  width: 99vw;
+  height: 99vh;
+  display: flex;
+}
+.link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 2em;
+  transition: 0.3s;
+}
+.link:hover {
+  color: #d8d8d8;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+.link:active {
+  color: #c9c9c9;
+}
