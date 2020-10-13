@@ -2,6 +2,8 @@ import React from "react";
 import "./main.css";
 import "./css/Login.css";
 
+import icon from "./img/icon_circle.png";
+
 //Material-ui components
 import TextField from "@material-ui/core/TextField";
 import { Button } from "@material-ui/core";
@@ -21,6 +23,13 @@ class Register extends React.Component {
   render() {
     return (
       <div className="register">
+        <img
+          src={icon}
+          alt="Logowanie"
+          width={180}
+          height={180}
+          className="iconImg"
+        />
         <TextField
           variant="filled"
           label="Login"
