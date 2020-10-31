@@ -6,8 +6,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 //Componenets
 import Login from "./Components/Login";
 import Register from "./Components/Register";
-let Home = ""; //DEV
-//import Home from './Components/Home'
+import Home from "./Components/Home";
 
 class App extends React.Component {
   constructor(props) {
@@ -22,7 +21,12 @@ class App extends React.Component {
     });
     this.state = {
       isLogged: false,
+      token: "",
+      refreshToken: "",
     };
+  }
+  componentDidMount() {
+    this.setState({ isLogged: this.isLogged() });
   }
   render() {
     return (
@@ -31,18 +35,49 @@ class App extends React.Component {
         <div className="App">
           <Router>
             <Switch>
-              <Route path="/login" component={Login} />
               <Route path="/register" component={Register} />
               <Route
                 exact
                 path="/"
-                component={this.state.isLogged ? Home : Login}
+                render={
+                  this.state.isLogged
+                    ? () => <Home />
+                    : () => (
+                        <Login
+                          that={this}
+                          handle={(token, refreshToken) => {
+                            this.handleLogin(token, refreshToken);
+                          }}
+                        />
+                      )
+                }
               />
             </Switch>
           </Router>
         </div>
       </ThemeProvider>
     );
+  }
+  handleLogin(token, refreshToken) {
+    //After client receives a token from the server, so he's logged correctly, redirect to the home page
+    if (!token || !refreshToken) {
+      return console.error(`Didn't receive the token`);
+    }
+    //DEV
+    //Check the token validity
+    this.setState({ isLogged: true, token: token, refreshToken: refreshToken });
+    localStorage.setItem("refreshToken", refreshToken);
+  }
+  isLogged() {
+    let refreshToken = localStorage.getItem("refreshToken");
+    console.log(refreshToken);
+    if (refreshToken) {
+      //DEV
+      //TODO: get the new token
+      this.setState({ isLogged: true });
+      return true;
+    }
+    return false;
   }
 }
 

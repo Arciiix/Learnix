@@ -54,7 +54,11 @@ class Login extends React.Component {
           error={this.state.errors.password}
           helperText={this.state.errors.password}
         />
-        <Button variant="contained" className="loginSubmit">
+        <Button
+          variant="contained"
+          className="loginSubmit"
+          onClick={this.login.bind(this)}
+        >
           Zaloguj
         </Button>
         <Link to={"/register"} className="link">
@@ -62,6 +66,13 @@ class Login extends React.Component {
         </Link>
       </div>
     );
+  }
+  login() {
+    //DEV
+    //TODO: Request to server, getting token and refresh token
+    let token = "sample"; //DEV
+    let refreshToken = "sample";
+    this.props.handle.apply(this.props.that, [token, refreshToken]);
   }
 }
 
