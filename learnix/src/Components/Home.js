@@ -19,11 +19,16 @@ class Home extends React.Component {
     this.state = {
       isMenuOpen: false,
       title: "Learnix",
+      nickname: "",
     };
   }
   componentDidMount() {
     window.addEventListener("resize", this.handleResize.bind(this));
     this.handleResize();
+    //DEV
+    //TODO: Decode the nickname from the token (this.props.token)
+    let nickname = "NAME"; //DEV
+    this.setState({ nickname: nickname });
   }
   componentWillUnmount() {
     window.removeEventListener("resize", this.handleResize.bind(this));
@@ -55,7 +60,7 @@ class Home extends React.Component {
             <div className="userLogOut">
               <AccountCircle fontSize="large" className="drawerAccount" />
               <Typography className="barText" className="drawerAccount">
-                NAZWA
+                {this.state.nickname}
               </Typography>
               <div className="logOutBtn">
                 <Button fullWidth size="large">

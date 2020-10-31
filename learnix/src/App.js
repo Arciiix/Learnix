@@ -41,7 +41,7 @@ class App extends React.Component {
                 path="/"
                 render={
                   this.state.isLogged
-                    ? () => <Home />
+                    ? () => <Home that={this} token={this.state.token} />
                     : () => (
                         <Login
                           that={this}
