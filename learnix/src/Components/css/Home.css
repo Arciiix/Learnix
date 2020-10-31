@@ -1,0 +1,46 @@
+.appBarContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.barPart {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.barText {
+  font-size: 2.5em !important;
+}
+.userLogOut {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+.drawerAccount {
+  margin: 5px;
+}
+.MuiDrawer-paper {
+  padding-right: 10px;
+}
+.drawerContent {
+  display: flex;
+}
+.logOutBtn {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.searchInput {
+  font-size: 1.5em;
+}
+@media (max-width: 768px) {
+  .searchInput {
+    width: 50vw;
+  }
+}
+@media (min-width: 769px) {
+  .searchInput {
+    width: 15vw;
+  }
+}
