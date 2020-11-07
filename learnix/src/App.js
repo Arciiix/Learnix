@@ -66,6 +66,7 @@ class App extends React.Component {
     //DEV
     //Check the token validity
     this.setState({ isLogged: true, token: token, refreshToken: refreshToken });
+    //TODO: Make the expire date
     localStorage.setItem("refreshToken", refreshToken);
   }
   isLogged() {
@@ -73,7 +74,7 @@ class App extends React.Component {
     console.log(refreshToken);
     if (refreshToken) {
       //DEV
-      //TODO: get the new token
+      //TODO: get the new token (and check the expire date)
       this.setState({ isLogged: true });
       return true;
     }

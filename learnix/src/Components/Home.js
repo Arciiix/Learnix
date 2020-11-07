@@ -11,7 +11,9 @@ import {
 } from "@material-ui/core";
 import { Search, Menu, AccountCircle, ExitToApp } from "@material-ui/icons/";
 
+import QuizCard from "./QuizCard";
 import "./css/Home.css";
+import "./css/QuizCard.css"; //We don't want to import it in every card, so we do this once, in the Home component
 
 class Home extends React.Component {
   constructor(props) {
@@ -90,6 +92,15 @@ class Home extends React.Component {
             </div>
           </Toolbar>
         </AppBar>
+        <div className="cards">
+          {/*DEV sample*/}
+          <QuizCard
+            id="test"
+            name="test"
+            numberOfQuestions={21}
+            imageLink={"https://i.ytimg.com/vi/ivgfEESeBHs/maxresdefault.jpg"}
+          />
+        </div>
       </div>
     );
   }

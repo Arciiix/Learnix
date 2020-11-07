@@ -1,0 +1,18 @@
+.card {
+  width: 20vw; /* TODO: it should be responsive */
+  margin: 10px;
+}
+.cardImg {
+  height: 200px;
+}
+.cardActions {
+  display: flex;
+  justify-content: space-between;
+}
+.numberOfQuestions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
