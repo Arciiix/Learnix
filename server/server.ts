@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 
-const { log, dateToTime } = require("./log");
+import { log, dateToTime } from "./log";
 
 //Use env variable or defined port
 const PORT = process.env.PORT || 1410;
